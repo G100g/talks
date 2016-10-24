@@ -16,6 +16,9 @@ h2, h3 {
   font-weight: 300;
 }
 
+.hljs-default .hljs {
+    padding-bottom: 1em;
+}
 
 .remark-container {
     background: #F8F8F8;
@@ -33,4 +36,18 @@ h2, h3 {
 .code-hilight .remark-code-line-highlighted {
   opacity: 1;
   background-color: transparent;
+}
+
+.inverse {
+    background: #333;
+    color: #f3f3f3;
+}
+.inverse h1,
+.inverse h2 {
+    color: #f3f3f3;
+}
+
+.demo h1 {
+    font-size: 10rem;
+    font-weight: 700;
 }

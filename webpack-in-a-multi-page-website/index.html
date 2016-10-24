@@ -34,10 +34,10 @@ webpack takes modules with dependencies and generates static assets representing
 https://webpack.github.io/
 
 ???
-Un module bundler
-Partendo da un file legge le dipendenze e crea un file statico
-modulo npm
-programma a riga di comando
+- Un module bundler
+- Partendo da un file legge le dipendenze e crea un file statico
+- Modulo npm
+- Programma a riga di comando
 
 ---
 name: basic-setup
@@ -120,12 +120,12 @@ module.exports = {
 ```
 
 ???
-Si possono includere assets diversi
-CSS, Template, Images
+- Si possono includere assets diversi
+- CSS, Template, Images
 
 ---
 
-class: center, middle
+class: center, middle, inverse, demo
 
 # DEMO
 
@@ -138,22 +138,148 @@ class: center, middle
 ## Common module across pages
 
 ???
-Configurare entry in modo automatico in base ai nostri sorgenti
-Aggiungo un file e non devo riconfigurare webpack
-Usare nei nostri moduli le libreria già presenti in pagina (es.jQuery)
-Inserire un file common in cui inserire i moduli presenti in diverse pagine
+- Configurare entry in modo automatico in base ai nostri sorgenti
+- Aggiungo un file e non devo riconfigurare webpack
+- Usare nei nostri moduli le libreria già presenti in pagina (es.jQuery)
+- Inserire un file common in cui inserire i moduli presenti in diverse pagine
 
 ---
+name: setup-entry-option
 
 # Setup entry option
 
+---
+
+### We'd like to transform this
+
+```bash
 - src
+    - Areas
+        - pageOne.js
+        - pageTwo.js
+    - common.js
     - homepage.js
-    - homepage.js
+```
 
+--
 
+### To this
 
+```bash
+- Scripts
+    - Areas
+        - pageOne.min.js
+        - pageTwo.min.js
+    - common.min.js
+    - homepage.min.js
+```
 
+???
+- Senza dover modificare il file di configurazione
+- Con minifcazione o senza per la produzione
+
+---
+class: center, middle, inverse, demo
+# DEMO
+---
+name: existing-libraries
+# Existing libraries
+
+--
+## Use **$** from jQuery
+
+???
+- Avere la referenza dall'oggetto globale
+- Dipendenze non gestibili in altro modo
+---
+class: center, middle, inverse, demo
+# DEMO
+---
+# Manage common modules
+
+--
+
+## Distribute modules between bundles
+
+--
+
+## Optimize bundles size
+
+???
+- Distribuzione dei moduli comuni
+- Riduzione del peso dei moduli
+
+---
+class: middle
+
+```js
+    // pageOne.js
+    import mySharedModule from 'my-shared-module';
+
+    ...
+
+    // pageTwo.js
+    import mySharedModule from 'my-shared-module';
+
+    ...
+
+    // commmon.js
+    import mySharedModule from 'my-shared-module';
+```
+???
+- Riferimento al modulo in pageOne and pageTwo
+- Codice del Modulo in common
+
+---
+class: middle
+
+```js
+    // pageOne.js
+    import myModule from 'my-module';
+
+    ...
+
+    // pageTwo.js
+    import myModule from 'my-module';
+```
+???
+- Codice del modulo sia in pageOne che in pageTwo
+- Non presente in common fino a che non lo importa anche common
+- Tip: Setup ad hoc per moduli condivisi senza importarlo in common
+
+---
+class: center, middle, inverse, demo
+# DEMO
+---
+class: middle, center
+### thanks for watching
+#### @g100g
+
+---
+class: inverse, middle, center
+
+# one more thing...
+
+---
+class: inverse, middle, center
+
+# Using ES6 features
+
+--
+
+## Using Babel loader
+
+???
+- Traspilatore di codice da ES6 a ES5
+
+---
+class: center, middle, inverse, demo
+# DEMO
+---
+class: bottom, center
+background-image: url(http://www.int33h.com/test/mi/img/preloader/monkeyLoader.gif)
+
+# **The End**
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
