@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Source+Sans+Pro:300,400,400i,700');
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3 {
+  line-height: 3rem;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+h2, h3 {
+  font-weight: 300;
+}
+
+
+.remark-container {
+    background: #F8F8F8;
+}
+
+.remark-code,
+.remark-inline-code {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.code-hilight .remark-code-line {
+  opacity: .3;
+}
+
+.code-hilight .remark-code-line-highlighted {
+  opacity: 1;
+  background-color: transparent;
+}

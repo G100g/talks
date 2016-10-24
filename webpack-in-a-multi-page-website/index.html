@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webpack in a multi page website</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../common/style.css" media="screen">
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Webpack in a multi page website
+## How to make it work
+
+---
+
+# Agenda
+
+1. What is Webpack?
+2. Problems to solve
+2. Basic setup
+4. Recreate base scope files tree
+5. Existing libraries
+5. Manage common modules
+
+---
+
+# What is Webpack?
+
+### is a **MODULE BUNDLER**
+webpack takes modules with dependencies and generates static assets representing those modules.
+
+https://webpack.github.io/
+
+???
+Un module bundler
+Partendo da un file legge le dipendenze e crea un file statico
+modulo npm
+programma a riga di comando
+
+---
+name: basic-setup
+# Basic setup
+---
+template: basic-setup
+
+## webpack.config.js
+
+---
+template: basic-setup
+
+```js
+module.exports = {
+    entry: "./entry.js",
+    output: {
+        path: __dirname,
+        filename: "bundle.js"
+    },
+    module: {
+        loaders: [
+            { test: /\.css$/, loader: "style!css" }
+        ]
+    }
+};
+```
+---
+template: basic-setup
+class: code-hilight
+
+```js
+module.exports = {
+*   entry: "./entry.js",
+    output: {
+        path: __dirname,
+        filename: "bundle.js"
+    },
+    module: {
+        loaders: [
+            { test: /\.css$/, loader: "style!css" }
+        ]
+    }
+};
+```
+---
+template: basic-setup
+class: code-hilight
+
+```js
+module.exports = {
+    entry: "./entry.js"
+*   output: {
+*       path: __dirname,
+*       filename: "bundle.js"
+*   },
+    module: {
+        loaders: [
+            { test: /\.css$/, loader: "style!css" }
+        ]
+    }
+};
+```
+---
+template: basic-setup
+class: code-hilight
+
+```js
+module.exports = {
+    entry: "./entry.js"
+    output: {
+        path: __dirname,
+        filename: "bundle.js"
+    },
+    module: {
+*       loaders: [
+*           { test: /\.css$/, loader: "style!css" }
+*       ]
+    }
+};
+```
+
+???
+Si possono includere assets diversi
+CSS, Template, Images
+
+---
+
+class: center, middle
+
+# DEMO
+
+---
+
+# Problems to solve
+
+## Setup entry option
+## Existing library
+## Common module across pages
+
+???
+Configurare entry in modo automatico in base ai nostri sorgenti
+Aggiungo un file e non devo riconfigurare webpack
+Usare nei nostri moduli le libreria già presenti in pagina (es.jQuery)
+Inserire un file common in cui inserire i moduli presenti in diverse pagine
+
+---
+
+# Setup entry option
+
+- src
+    - homepage.js
+    - homepage.js
+
+
+
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true
+      });
+    </script>
+  </body>
+</html>
