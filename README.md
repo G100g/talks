@@ -1,2 +1,2 @@
-# talks
+# Talks
 Sometimes I speak about stuff
