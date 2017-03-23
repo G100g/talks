@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webpack in a multi page website</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../common/style.css" media="screen">
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Web Push Notifications
+## Simple Workflow
+
+---
+
+# Agenda
+
+1. Waht we are talking about
+2. Problems to solve
+2. Basic setup
+4. Recreate base scope files tree
+5. Existing libraries
+5. Manage common modules
+---
+class: center, middle
+
+# Compatibility Desktop
+
+### Chrome
+### Firefox
+### Opera
+
+source: http://caniuse.com/#feat=push-api
+
+---
+class: center, middle
+
+# Compatibility Mobile
+
+### Chrome for Android
+
+source: http://caniuse.com/#feat=push-api
+
+---
+
+class: center, middle
+# Web Notifications
+https://developer.mozilla.org/en-US/docs/Web/API/notification
+### vs
+# Push Manager
+https://developer.mozilla.org/it/docs/Web/API/Push_API
+
+
+---
+
+class: center
+# Agenti coinvolti
+
+.biglist[
+## Client
+To grant permission and handle subscription
+
+## Service Worker
+To handle push notifications events
+
+## Push Server
+To dispatch notifications to the Client
+
+## Your own server
+To store subscribtions and send notifications
+]
+---
+# Client
+
+- Check for Service Worker and PushManager availability
+- Subscribe to Push Notification
+- Send subscription to your own server
+
+---
+
+# Manifest.json
+
+Old Chrome need to add gcm_sender_id
+
+---
+
+# VAPID
+
+**Voluntary Application Server Identification**
+
+source: https://developers.google.com/web/updates/2016/07/web-push-interop-wins
+
+---
+
+# userVisibleOnly
+
+Tell the browser the the messages from push event are only visible by user
+Mandatory
+
+---
+
+# Service Worker
+
+- Handle Push events
+- Send Local Notification
+
+---
+# Push Server
+
+- Receive trigger from your own server
+- Send push event to Client
+
+---
+
+# Your own server
+
+- Store Client subscription
+- Trigger Push Server
+- Maybe a lot more...
+
+---
+class: center, middle, inverse, demo
+# References
+
+https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/
+---
+class: bottom, center
+background-image: url(http://www.int33h.com/test/mi/img/preloader/monkeyLoader.gif)
+
+# **The End**
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true
+      });
+    </script>
+  </body>
+</html>
