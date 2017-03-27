@@ -11,22 +11,23 @@
 class: center, middle
 
 # Web Push Notifications
-## Simple Workflow
+## Explained Workflow
 
 ---
 
 # Agenda
 
-1. Waht we are talking about
+1. What we are talking about
 2. Problems to solve
 2. Basic setup
 4. Recreate base scope files tree
 5. Existing libraries
 5. Manage common modules
+
 ---
 class: center, middle
 
-# Compatibility Desktop
+# Desktop Compatibility 
 
 ### Chrome
 ### Firefox
@@ -37,7 +38,7 @@ source: http://caniuse.com/#feat=push-api
 ---
 class: center, middle
 
-# Compatibility Mobile
+# Mobile Compatibility 
 
 ### Chrome for Android
 
@@ -45,13 +46,12 @@ source: http://caniuse.com/#feat=push-api
 
 ---
 
-class: center, middle
+class: center, middle, warning
 # Web Notifications
 https://developer.mozilla.org/en-US/docs/Web/API/notification
 ### vs
 # Push Manager
 https://developer.mozilla.org/it/docs/Web/API/Push_API
-
 
 ---
 
@@ -79,6 +79,19 @@ To store subscribtions and send notifications
 - Send subscription to your own server
 
 ---
+# Subscription object
+
+```json
+{   
+  "endpoint": "https://fcm.googleapis.com/fcm/send/d30jsbes9EY...",
+  "keys":{
+      "p256dh":"BCIjRl6EuZG33LSiVnPr_2uFdPikE1Gsv_R-L0A7__TWaG...",
+      "auth":"tdkE5LwkRknBHRlp6Cdrww=="
+  }
+}
+```
+
+---
 
 # Manifest.json
 
@@ -86,19 +99,39 @@ Old Chrome need to add gcm_sender_id
 
 ---
 
-# VAPID
+# userVisibleOnly
 
-**Voluntary Application Server Identification**
+## Tell the browser the the messages from push event are only visible by the User
+
+*and is required (for now)*
+
+---
+
+# applicationServerKey
+
+## A public key your own server will use to send messages to client apps via a push server.
+
+*you have to generate your own*
+
+---
+
+# **V**oluntary **AP**plication Server **ID**entification
+
+## defines a handshake between your app server and the push service and allows the push service to confirm which site is sending messages*
+
+**generate once*
 
 source: https://developers.google.com/web/updates/2016/07/web-push-interop-wins
 
 ---
 
-# userVisibleOnly
+# Your own server
 
-Tell the browser the the messages from push event are only visible by user
-Mandatory
-
+.biglist[
+## Store Client subscription
+## Send notification to Push Server
+## Maybe a lot more...
+]
 ---
 
 # Service Worker
@@ -111,15 +144,6 @@ Mandatory
 
 - Receive trigger from your own server
 - Send push event to Client
-
----
-
-# Your own server
-
-- Store Client subscription
-- Trigger Push Server
-- Maybe a lot more...
-
 ---
 class: center, middle, inverse, demo
 # References
