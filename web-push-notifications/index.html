@@ -4,6 +4,38 @@
     <title>Webpack in a multi page website</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../common/style.css" media="screen">
+    <style>
+      a {
+        color: tomato;
+      }
+
+      .about-me {
+        background-position: center right;
+        background-size: 45%;
+      }
+
+      .browser-logo {
+          width: 22%;
+          display: inline-block;
+          vertical-align: middle;
+          padding: 1em;
+      }
+
+        .browser-logo img {
+          width: 100%;
+          height: auto;
+        }
+
+
+      .warning {
+          background: red;
+          color: white;
+      }
+
+        .warning a {
+          color: white;
+        }
+    </style>
   </head>
   <body>
     <textarea id="source">
@@ -13,6 +45,16 @@ class: center, middle
 # Web Push Notifications
 ## Explained Workflow
 
+---
+class: middle,about-me
+background-image: url(http://g100g.net/wp-content/uploads/2012/12/me_20131105.jpg)
+
+#About Me
+.biglist[
+## Tech Lead at YNAP
+
+### @G100g
+]
 ---
 
 # Agenda
@@ -29,9 +71,9 @@ class: center, middle
 
 # Desktop Compatibility 
 
-### Chrome
-### Firefox
-### Opera
+.browser-logo[![Chrome](https://upload.wikimedia.org/wikipedia/commons/e/e2/Google_Chrome_icon_%282011%29.svg)]
+.browser-logo[![Firefox](https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg)]
+.browser-logo[![Opera](https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg)]
 
 source: http://caniuse.com/#feat=push-api
 
@@ -40,7 +82,8 @@ class: center, middle
 
 # Mobile Compatibility 
 
-### Chrome for Android
+.browser-logo[![Chrome for Android](https://upload.wikimedia.org/wikipedia/commons/e/e2/Google_Chrome_icon_%282011%29.svg)]
+.browser-logo[![Firefox](https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg)]
 
 source: http://caniuse.com/#feat=push-api
 
@@ -55,28 +98,29 @@ https://developer.mozilla.org/it/docs/Web/API/Push_API
 
 ---
 
-class: center
+class: 
 # Agenti coinvolti
 
 .biglist[
 ## Client
 To grant permission and handle subscription
 
-## Service Worker
-To handle push notifications events
+## Your own server
+To store subscribtions and send notifications
 
 ## Push Server
 To dispatch notifications to the Client
 
-## Your own server
-To store subscribtions and send notifications
+## Service Worker
+To handle push notifications events
+
 ]
 ---
 # Client
 
-- Check for Service Worker and PushManager availability
-- Subscribe to Push Notification
-- Send subscription to your own server
+## Check for Service Worker and PushManager availability
+## Subscribe to Push Notification
+## Send subscription to your own server
 
 ---
 # Subscription object
@@ -90,13 +134,6 @@ To store subscribtions and send notifications
   }
 }
 ```
-
----
-
-# Manifest.json
-
-Old Chrome need to add gcm_sender_id
-
 ---
 
 # userVisibleOnly
@@ -111,7 +148,9 @@ Old Chrome need to add gcm_sender_id
 
 ## A public key your own server will use to send messages to client apps via a push server.
 
-*you have to generate your own*
+
+
+### *pass as Uint8Array*
 
 ---
 
@@ -124,6 +163,12 @@ Old Chrome need to add gcm_sender_id
 source: https://developers.google.com/web/updates/2016/07/web-push-interop-wins
 
 ---
+class: center, middle, warning
+# Manifest.json
+
+## Old Chrome <= 51 need to add *gcm_sender_id*
+
+---
 
 # Your own server
 
@@ -133,22 +178,49 @@ source: https://developers.google.com/web/updates/2016/07/web-push-interop-wins
 ## Maybe a lot more...
 ]
 ---
+class: center, middle
 
-# Service Worker
+# web-push
 
-- Handle Push events
-- Send Local Notification
+### https://github.com/web-push-libs/web-push
 
 ---
+
 # Push Server
 
-- Receive trigger from your own server
-- Send push event to Client
+## Receive trigger from your own server
+## Send push event to Client
+
 ---
+# Service Worker
+
+## Handle Push events
+## Send Local Notification
+
+---
+class: center,middle
+
+# Web Notifications
+https://developer.mozilla.org/en-US/docs/Web/API/notification
+
+---
+class: center,middle
+# event.waitUntil(**...**)
+
+
+---
+
 class: center, middle, inverse, demo
 # References
 
 https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/
+
+https://web-push-book.gauntface.com/
+
+https://developers.google.com/web/updates/2016/07/web-push-interop-wins
+
+https://serviceworke.rs/
+
 ---
 class: bottom, center
 background-image: url(http://www.int33h.com/test/mi/img/preloader/monkeyLoader.gif)
