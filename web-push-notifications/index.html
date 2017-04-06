@@ -43,7 +43,9 @@
 class: center, middle
 
 # Web Push Notifications
-## Explained Workflow
+## Workflow Explained
+
+draft: https://w3c.github.io/push-api/
 
 ---
 class: middle,about-me
@@ -56,20 +58,16 @@ background-image: url(http://g100g.net/wp-content/uploads/2012/12/me_20131105.jp
 ### @G100g
 ]
 ---
+class: center, middle
 
-# Agenda
+![Chrome](./web-push-notifications/images/notification.png)
 
-1. What we are talking about
-2. Problems to solve
-2. Basic setup
-4. Recreate base scope files tree
-5. Existing libraries
-5. Manage common modules
+... Facebook, YouTube, Telegram, WhatsApp ...
 
 ---
 class: center, middle
 
-# Desktop Compatibility 
+# Compatibility 
 
 .browser-logo[![Chrome](https://upload.wikimedia.org/wikipedia/commons/e/e2/Google_Chrome_icon_%282011%29.svg)]
 .browser-logo[![Firefox](https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg)]
@@ -80,12 +78,20 @@ source: http://caniuse.com/#feat=push-api
 ---
 class: center, middle
 
-# Mobile Compatibility 
+# In development
 
-.browser-logo[![Chrome for Android](https://upload.wikimedia.org/wikipedia/commons/e/e2/Google_Chrome_icon_%282011%29.svg)]
-.browser-logo[![Firefox](https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg)]
+.browser-logo[![Edge](./web-push-notifications/images/Microsoft_Edge_logo.svg)]
 
-source: http://caniuse.com/#feat=push-api
+source: https://developer.microsoft.com/en-us/microsoft-edge/platform/status/pushapi/
+
+---
+class: center, middle
+
+# Its Own Implementation
+
+.browser-logo[![Safari](./web-push-notifications/images/safari.svg)]
+
+source: https://developer.apple.com/notifications/safari-push-notifications/
 
 ---
 
@@ -93,13 +99,13 @@ class: center, middle, warning
 # Web Notifications
 https://developer.mozilla.org/en-US/docs/Web/API/notification
 ### vs
-# Push Manager
+# Push API
 https://developer.mozilla.org/it/docs/Web/API/Push_API
 
 ---
 
 class: 
-# Agenti coinvolti
+# Actors Involved
 
 .biglist[
 ## Client
@@ -108,7 +114,7 @@ To grant permission and handle subscription
 ## Your own server
 To store subscribtions and send notifications
 
-## Push Server
+## Push Service
 To dispatch notifications to the Client
 
 ## Service Worker
@@ -118,8 +124,8 @@ To handle push notifications events
 ---
 # Client
 
-## Check for Service Worker and PushManager availability
-## Subscribe to Push Notification
+## Check for *Service Worker* <br>and *Push API* availability
+## Subscribe with *Push Manager*
 ## Send subscription to your own server
 
 ---
@@ -146,7 +152,7 @@ To handle push notifications events
 
 # applicationServerKey
 
-## A public key your own server will use to send messages to client apps via a push server.
+## A public key your own server will use to send messages to client apps via a push service.
 
 
 
@@ -174,7 +180,7 @@ class: center, middle, warning
 
 .biglist[
 ## Store Client subscription
-## Send notification to Push Server
+## Send notification to Push Service
 ## Maybe a lot more...
 ]
 ---
@@ -186,7 +192,7 @@ class: center, middle
 
 ---
 
-# Push Server
+# Push Service
 
 ## Receive trigger from your own server
 ## Send push event to Client
