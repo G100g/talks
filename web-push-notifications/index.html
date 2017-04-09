@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webpack in a multi page website</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../common/style.css" media="screen">
+    <style>
+      a {
+        color: tomato;
+      }
+
+      .about-me {
+        background-position: center right;
+        background-size: 45%;
+      }
+
+      .browser-logo {
+          width: 22%;
+          display: inline-block;
+          vertical-align: middle;
+          padding: 1em;
+      }
+
+        .browser-logo img {
+          width: 100%;
+          height: auto;
+        }
+
+
+      .warning {
+          background: red;
+          color: white;
+      }
+
+        .warning a {
+          color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Web Push Notifications
+## Workflow Explained
+
+draft: https://w3c.github.io/push-api/
+
+---
+class: middle,about-me
+background-image: url(http://g100g.net/wp-content/uploads/2012/12/me_20131105.jpg)
+
+#About Me
+.biglist[
+## Tech Lead at YNAP
+
+### @G100g
+]
+---
+class: center, middle
+
+![Chrome](./web-push-notifications/images/notification.png)
+
+... Facebook, YouTube, Telegram, WhatsApp ...
+
+---
+class: center, middle
+
+# Compatibility 
+
+.browser-logo[![Chrome](https://upload.wikimedia.org/wikipedia/commons/e/e2/Google_Chrome_icon_%282011%29.svg)]
+.browser-logo[![Firefox](https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg)]
+.browser-logo[![Opera](https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg)]
+
+source: http://caniuse.com/#feat=push-api
+
+---
+class: center, middle
+
+# In development
+
+.browser-logo[![Edge](./web-push-notifications/images/Microsoft_Edge_logo.svg)]
+
+source: https://developer.microsoft.com/en-us/microsoft-edge/platform/status/pushapi/
+
+---
+class: center, middle
+
+# Its Own Implementation
+
+.browser-logo[![Safari](./web-push-notifications/images/safari.svg)]
+
+source: https://developer.apple.com/notifications/safari-push-notifications/
+
+---
+
+class: center, middle, warning
+# Web Notifications
+https://developer.mozilla.org/en-US/docs/Web/API/notification
+### vs
+# Push API
+https://developer.mozilla.org/it/docs/Web/API/Push_API
+
+---
+
+class: 
+# Actors Involved
+
+.biglist[
+## Client
+To grant permission and handle subscription
+
+## Your own server
+To store subscribtions and send notifications
+
+## Push Service
+To dispatch notifications to the Client
+
+## Service Worker
+To handle push notifications events
+
+]
+---
+# Client
+
+## Check for *Service Worker* <br>and *Push API* availability
+## Subscribe with *Push Manager*
+## Send subscription to your own server
+
+---
+# Subscription object
+
+```json
+{   
+  "endpoint": "https://fcm.googleapis.com/fcm/send/d30jsbes9EY...",
+  "keys":{
+      "p256dh":"BCIjRl6EuZG33LSiVnPr_2uFdPikE1Gsv_R-L0A7__TWaG...",
+      "auth":"tdkE5LwkRknBHRlp6Cdrww=="
+  }
+}
+```
+---
+
+# userVisibleOnly
+
+## Tell the browser the the messages from push event are only visible by the User
+
+*and is required (for now)*
+
+---
+
+# applicationServerKey
+
+## A public key your own server will use to send messages to client apps via a push service.
+
+
+
+### *pass as Uint8Array*
+
+---
+
+# **V**oluntary **AP**plication Server **ID**entification
+
+## defines a handshake between your app server and the push service and allows the push service to confirm which site is sending messages*
+
+**generate once*
+
+source: https://developers.google.com/web/updates/2016/07/web-push-interop-wins
+
+---
+class: center, middle, warning
+# Manifest.json
+
+## Old Chrome <= 51 need to add *gcm_sender_id*
+
+---
+
+# Your own server
+
+.biglist[
+## Store Client subscription
+## Send notification to Push Service
+## Maybe a lot more...
+]
+---
+class: center, middle
+
+# web-push
+
+### https://github.com/web-push-libs/web-push
+
+---
+
+# Push Service
+
+## Receive trigger from your own server
+## Send push event to Client
+
+---
+# Service Worker
+
+## Handle Push events
+## Send Local Notification
+
+---
+class: center,middle
+
+# Web Notifications
+https://developer.mozilla.org/en-US/docs/Web/API/notification
+
+---
+class: center,middle
+# event.waitUntil(**...**)
+
+
+---
+
+class: center, middle, inverse, demo
+# References
+
+https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/
+
+https://web-push-book.gauntface.com/
+
+https://developers.google.com/web/updates/2016/07/web-push-interop-wins
+
+https://serviceworke.rs/
+
+---
+class: bottom, center
+background-image: url(http://www.int33h.com/test/mi/img/preloader/monkeyLoader.gif)
+
+# **The End**
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true
+      });
+    </script>
+  </body>
+</html>
