@@ -43,39 +43,39 @@
         .warning a {
           color: white;
         }
+
+      .big-title h1 {
+        font-size: 6rem;
+        line-height: 5.2rem;
+      }
     </style>
   </head>
   <body>
     <textarea id="source">
 
-class: center, middle, gatsby
-
-.browser-logo[![GraphQL](./images/gatsbyjs-logo-white.svg)]
-## Blazing-fast static site generator for React
-
-https://www.gatsbyjs.org/
-
----
 class: center, middle
 
-- What it is a static website generator
+- 
 - Competitor
 - GraphQL
 - React
 - Let's Build a website
 
 ---
-class: center, middle
+class: center, middle, gatsby
 
-# Powered by
+.big-logo[![GraphQL](./images/gatsbyjs-logo-white.svg)]
+## Blazing-fast static site generator for React
 
-.big-logo[![GraphQL](./images/GraphQL_Logo.svg)]
-.big-logo[![GatsbyJS](./images/react-icon.svg)]
-.big-logo[![Gatsby](./images/webpack.svg)]
-
-source: http://caniuse.com/#feat=push-api
+https://www.gatsbyjs.org/
 
 ---
+class: center, middle, big-title
+
+# What is a<br>**static site** generator?
+
+---
+
 class:
 
 .biglist[
@@ -105,103 +105,19 @@ Framework for server-rendered or statically-exported React apps
 ]
 
 ---
-# CLI application
-
-```bash
-$ gatsby new my-new-static-website
-```
----
-
-# userVisibleOnly
-
-## Tell the browser the the messages from push event are only visible by the User
-
-*and is required (for now)*
-
----
-
-# applicationServerKey
-
-## A public key your own server will use to send messages to client apps via a push service.
-
-
-
-### *pass as Uint8Array*
-
----
-
-# **V**oluntary **AP**plication Server **ID**entification
-
-## defines a handshake between your app server and the push service and allows the push service to confirm which site is sending messages*
-
-**generate once*
-
-source: https://developers.google.com/web/updates/2016/07/web-push-interop-wins
-
----
-class: center, middle, warning
-# Manifest.json
-
-## Old Chrome <= 51 need to add *gcm_sender_id*
-
----
-
-# Your own server
-
-.biglist[
-## Store Client subscription
-## Send notification to Push Service
-## Maybe a lot more...
-]
----
 class: center, middle
 
-# web-push
+# Powered by
 
-### https://github.com/web-push-libs/web-push
-
----
-
-# Push Service
-
-## Receive trigger from your own server
-## Send push event to Client
-
----
-# Service Worker
-
-## Handle Push events
-## Send Local Notification
-
----
-class: center,middle
-
-# Web Notifications
-https://developer.mozilla.org/en-US/docs/Web/API/notification
-
----
-class: center,middle
-# event.waitUntil(**...**)
-
-
----
-
-class: center, middle, inverse, demo
-# References
-
-https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/
-
-https://web-push-book.gauntface.com/
-
-https://developers.google.com/web/updates/2016/07/web-push-interop-wins
-
-https://serviceworke.rs/
+.big-logo[![GraphQL](./images/GraphQL_Logo.svg)]
+.big-logo[![GatsbyJS](./images/react-icon.svg)]
+.big-logo[![Gatsby](./images/webpack.svg)]
 
 ---
 class: bottom, center
 background-image: url(http://www.int33h.com/test/mi/img/preloader/monkeyLoader.gif)
 
-# **The End**
+# **Let's build a website**
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
