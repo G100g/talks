@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Web Push Notifications: Workflow Explained</title>
+    <title>GatsbyJS: Blazing-fast static site generator for React</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../common/style.css" media="screen">
     <style>
       a {
-        color: tomato;
+        color: #744c9e;
       }
 
       .about-me {
@@ -14,18 +14,26 @@
         background-size: 45%;
       }
 
-      .browser-logo {
+      .big-logo {
           width: 22%;
           display: inline-block;
           vertical-align: middle;
           padding: 1em;
       }
 
-        .browser-logo img {
+        .big-logo img {
           width: 100%;
           height: auto;
         }
 
+      .gatsby {
+        background: #744c9e;
+        color: white;
+      }
+
+      .gatsby a {
+        color: #ded6e7;
+      }
 
       .warning {
           background: red;
@@ -40,105 +48,67 @@
   <body>
     <textarea id="source">
 
-class: center, middle
+class: center, middle, gatsby
 
-# Web Push Notifications
-## Workflow Explained
+.browser-logo[![GraphQL](./images/gatsbyjs-logo-white.svg)]
+## Blazing-fast static site generator for React
 
-draft: https://w3c.github.io/push-api/
-
----
-class: middle,about-me
-background-image: url(http://g100g.net/wp-content/uploads/2012/12/me_20131105.jpg)
-
-#About Me
-.biglist[
-## Tech Lead at YNAP
-
-### @G100g
-]
----
-class: center, middle
-
-![Chrome](./images/notification.png)
-
-... Facebook, YouTube, Telegram, WhatsApp ...
+https://www.gatsbyjs.org/
 
 ---
 class: center, middle
 
-# Compatibility 
+- What it is a static website generator
+- Competitor
+- GraphQL
+- React
+- Let's Build a website
 
-.browser-logo[![Chrome](https://upload.wikimedia.org/wikipedia/commons/e/e2/Google_Chrome_icon_%282011%29.svg)]
-.browser-logo[![Firefox](https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg)]
-.browser-logo[![Opera](https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg)]
+---
+class: center, middle
+
+# Powered by
+
+.big-logo[![GraphQL](./images/GraphQL_Logo.svg)]
+.big-logo[![GatsbyJS](./images/react-icon.svg)]
+.big-logo[![Gatsby](./images/webpack.svg)]
 
 source: http://caniuse.com/#feat=push-api
 
 ---
-class: center, middle
-
-# In development
-
-.browser-logo[![Edge](./images/Microsoft_Edge_logo.svg)]
-
-source: https://developer.microsoft.com/en-us/microsoft-edge/platform/status/pushapi/
-
----
-class: center, middle
-
-# Its Own Implementation
-
-.browser-logo[![Safari](./images/safari.svg)]
-
-source: https://developer.apple.com/notifications/safari-push-notifications/
-
----
-
-class: center, middle, warning
-# Web Notifications
-https://developer.mozilla.org/en-US/docs/Web/API/notification
-### vs
-# Push API
-https://developer.mozilla.org/it/docs/Web/API/Push_API
-
----
-
-class: 
-# Actors Involved
+class:
 
 .biglist[
-## Client
-To grant permission and handle subscription
+# Competitors
 
-## Your own server
-To store subscribtions and send notifications
+## Jekyll
+A simple, blog-aware, static site generator.
 
-## Push Service
-To dispatch notifications to the Client
+## Hugo
+A Fast and Flexible Static Site Generator.
 
-## Service Worker
-To handle push notifications events
+## Hexo
+Hexo is a fast, simple and powerful blog framework.
+
+## Nuxt
+A minimalistic framework for serverless Vue.js applications.
 
 ]
----
-# Client
-
-## Check for *Service Worker* <br>and *Push API* availability
-## Subscribe with *Push Manager*
-## Send subscription to your own server
+source: https://www.staticgen.com/
 
 ---
-# Subscription object
 
-```json
-{   
-  "endpoint": "https://fcm.googleapis.com/fcm/send/d30jsbes9EY...",
-  "keys":{
-      "p256dh":"BCIjRl6EuZG33LSiVnPr_2uFdPikE1Gsv_R-L0A7__TWaG...",
-      "auth":"tdkE5LwkRknBHRlp6Cdrww=="
-  }
-}
+class: center, middle, inverse
+
+.biglist[# Next.js
+Framework for server-rendered or statically-exported React apps
+]
+
+---
+# CLI application
+
+```bash
+$ gatsby new my-new-static-website
 ```
 ---
 
