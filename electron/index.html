@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ElectronJS</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../common/style.css" media="screen" />
+        <style>
+            a {
+                color: #74b1be;
+            }
+
+            .about-me {
+                background-position: center right;
+                background-size: 45%;
+            }
+
+            .big-logo {
+                width: 33%;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 1em;
+            }
+
+            .big-logo img {
+                width: 100%;
+                height: auto;
+            }
+
+            .big-list ul {
+                margin: 0;
+                padding: 0;
+                font-size: 3rem;
+            }
+
+            .big-list li {
+                display: inline;
+                list-style: none;
+                /* padding: 0; */
+                margin: 0;
+            }
+
+            .big-list li:nth-child(odd) {
+                font-weight: bold;
+            }
+
+            .cloud-list ul {
+                margin: 0;
+                padding: 0;
+                font-size: 1.5rem;
+            }
+
+            .cloud-list li {
+                display: inline;
+                list-style: none;
+                /* padding: 0; */
+                margin: 0;
+                color: #ccc;
+            }
+
+            .cloud-list li em {
+                color: #333;
+                font-style: inherit;
+                font-weight: bold;
+            }
+
+            .cloud-list li:nth-child(odd) {
+                font-weight: bold;
+            }
+
+            .focus {
+                background: #2b2e3b;
+                color: #74b1be;
+            }
+
+            .focus a {
+                color: #fff;
+            }
+
+            .warning {
+                background: red;
+                color: white;
+            }
+
+            .success {
+                background: rgb(0, 255, 149);
+                color: rgb(17, 54, 0);
+            }
+
+            .warning a {
+                color: white;
+            }
+
+            .big-title h1 {
+                font-size: 6rem;
+                line-height: 5.2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <textarea id="source">
+
+class: center, middle, focus
+
+.big-logo[![Electron](./images/electron.svg)]
+## Build cross platform desktop apps with JavaScript, HTML, and CSS
+
+http://electronjs.org/
+
+---
+class: center, middle, big-list
+
+- Skype
+- GitHub Desktop
+- Figma
+- Flow Beaker
+- Browser
+- Hyper
+- Kap
+- Now Desktop
+- Insomnia
+- Svgsus
+- Simplenote
+- Collectie
+- GitKraken
+- Ghost
+- WebTorrent
+- 1Clipboard
+- Discord
+- WordPress.com
+- Caret
+- JIBO
+- Visual Studio Code
+- Kitematic
+- Slack
+- Atom
+
+---
+
+class: center, middle, success
+
+# Pros
+.biglist[
+## Web Technologies
+## Cross Platform
+## Fast Developing<br><small>(No Build, Hot Reloading, Debug)</small>
+]
+---
+class: center, middle, warning
+
+
+# Cons
+.biglist[
+## Size
+## Resource
+## Code Privacy
+]
+---
+
+class: center, middle
+
+.biglist[
+
+# Boilerplates
+
+## electron-webpack-quick-start 
+Simple • Fast • Use `electron-webpack` • Babel out fo the box
+
+## electron-forge
+A CLI tool • Build & AutoUpdate • Plain JS • Plugins
+
+## electron-react-boilerplate
+React, Redux, React Router, Webpack and React Hot Loader
+
+## szwacz/electron-boilerplate
+Not very updated.
+]
+
+---
+
+class: center, middle, inverse, big-title
+
+# Build
+
+---
+
+class: center, middle
+
+.biglist[
+
+# Build
+
+## Main
+The **nodejs** process that handle all renders
+
+## Render
+Your web page. Access to **nodejs API**
+]
+
+---
+class: center, middle
+
+.biglist[
+
+# Comunication
+
+## Main `<->` **ipcMain** `<->` Render
+Communicate asynchronously from the main process to renderer processes.
+
+]
+
+---
+class: center, middle, cloud-list
+
+# API
+
+- Accelerator
+- app
+- autoUpdater
+- API Contract
+- BrowserView
+- *BrowserWindow*
+- BrowserWindowProxy
+- Supported Chrome Command Line Switches
+- ClientRequest
+- *clipboard*
+- contentTracing
+- Cookies
+- crashReporter
+- Debugger
+- desktopCapturer
+- *dialog*
+- DownloadItem
+- Environment Variables
+- File Object
+- *Frameless Window*
+- globalShortcut
+- inAppPurchase
+- IncomingMessage
+- *ipcMain*
+- ipcRenderer
+- Locales
+- *Menu*
+- MenuItem
+- nativeImage
+- net
+- netLog
+- *Notification*
+- powerMonitor
+- powerSaveBlocker
+- process
+- Promisification
+- protocol
+- remote
+- sandbox Option
+- screen
+- session
+- shell
+- Synopsis
+- systemPreferences
+- *TouchBar*
+- TouchBarButton
+- TouchBarColorPicker
+- TouchBarGroup
+- TouchBarLabel
+- TouchBarPopover
+- TouchBarScrubber
+- TouchBarSegmentedControl
+- TouchBarSlider
+- TouchBarSpacer
+- Tray
+- *webContents*
+- webFrame
+- WebRequest
+- *<webview> Tag*
+- window.open Function
+
+---
+
+class: center, middle, inverse
+
+.big-logo[![GraphQL](./images/api-demo.png)]
+# Electron API Demos
+https://github.com/electron/electron-api-demos
+
+---
+class: center, middle
+
+.biglist[
+
+# Package & Auto Update
+
+## electron.build
+A complete solution to package and build<br> a ready for distribution Electron app<br> for macOS, Windows and Linux<br> with “auto update” support out of the box
+
+<!-- ## with electron.build -->
+Publish to GitHub Releases, Amazon S3,<br> DigitalOcean Spaces, Bintray<br> and generic HTTP(s) server
+
+]
+
+---
+class: middle
+
+# Useful resources
+.biglist[
+- http://electronjs.org/
+- https://electronjs.org/docs/tutorial/application-architecture
+- https://electronjs.org/docs
+- https://www.electron.build/
+
+- https://github.com/electron-userland/electron-webpack-quick-start
+- https://webpack.electron.build/
+- https://electronforge.io/
+- https://github.com/electron-react-boilerplate/electron-react-boilerplate
+]
+
+    </textarea
+        >
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+        <script>
+            var slideshow = remark.create({
+                highlightLines: true
+            });
+        </script>
+    </body>
+</html>
