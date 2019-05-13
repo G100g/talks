@@ -1,103 +1,105 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ElectronJS</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="../common/style.css" media="screen" />
-        <style>
-            a {
-                color: #74b1be;
-            }
 
-            .about-me {
-                background-position: center right;
-                background-size: 45%;
-            }
+<head>
+  <title>ElectronJS</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../common/style.css" media="screen" />
+  <style>
+    a {
+      color: #74b1be;
+    }
 
-            .big-logo {
-                width: 33%;
-                display: inline-block;
-                vertical-align: middle;
-                padding: 1em;
-            }
+    .about-me {
+      background-position: center right;
+      background-size: 45%;
+    }
 
-            .big-logo img {
-                width: 100%;
-                height: auto;
-            }
+    .big-logo {
+      width: 33%;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 1em;
+    }
 
-            .big-list ul {
-                margin: 0;
-                padding: 0;
-                font-size: 3rem;
-            }
+    .big-logo img {
+      width: 100%;
+      height: auto;
+    }
 
-            .big-list li {
-                display: inline;
-                list-style: none;
-                /* padding: 0; */
-                margin: 0;
-            }
+    .big-list ul {
+      margin: 0;
+      padding: 0;
+      font-size: 3rem;
+    }
 
-            .big-list li:nth-child(odd) {
-                font-weight: bold;
-            }
+    .big-list li {
+      display: inline;
+      list-style: none;
+      /* padding: 0; */
+      margin: 0;
+    }
 
-            .cloud-list ul {
-                margin: 0;
-                padding: 0;
-                font-size: 1.5rem;
-            }
+    .big-list li:nth-child(odd) {
+      font-weight: bold;
+    }
 
-            .cloud-list li {
-                display: inline;
-                list-style: none;
-                /* padding: 0; */
-                margin: 0;
-                color: #ccc;
-            }
+    .cloud-list ul {
+      margin: 0;
+      padding: 0;
+      font-size: 1.5rem;
+    }
 
-            .cloud-list li em {
-                color: #333;
-                font-style: inherit;
-                font-weight: bold;
-            }
+    .cloud-list li {
+      display: inline;
+      list-style: none;
+      /* padding: 0; */
+      margin: 0;
+      color: #ccc;
+    }
 
-            .cloud-list li:nth-child(odd) {
-                font-weight: bold;
-            }
+    .cloud-list li em {
+      color: #333;
+      font-style: inherit;
+      font-weight: bold;
+    }
 
-            .focus {
-                background: #2b2e3b;
-                color: #74b1be;
-            }
+    .cloud-list li:nth-child(odd) {
+      font-weight: bold;
+    }
 
-            .focus a {
-                color: #fff;
-            }
+    .focus {
+      background: #2b2e3b;
+      color: #74b1be;
+    }
 
-            .warning {
-                background: red;
-                color: white;
-            }
+    .focus a {
+      color: #fff;
+    }
 
-            .success {
-                background: rgb(0, 255, 149);
-                color: rgb(17, 54, 0);
-            }
+    .warning {
+      background: red;
+      color: white;
+    }
 
-            .warning a {
-                color: white;
-            }
+    .success {
+      background: rgb(0, 255, 149);
+      color: rgb(17, 54, 0);
+    }
 
-            .big-title h1 {
-                font-size: 6rem;
-                line-height: 5.2rem;
-            }
-        </style>
-    </head>
-    <body>
-        <textarea id="source">
+    .warning a {
+      color: white;
+    }
+
+    .big-title h1 {
+      font-size: 6rem;
+      line-height: 5.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="source">
 
 class: center, middle, focus
 
@@ -313,13 +315,13 @@ class: middle
 - https://github.com/electron-react-boilerplate/electron-react-boilerplate
 ]
 
-    </textarea
-        >
-        <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-        <script>
-            var slideshow = remark.create({
-                highlightLines: true
-            });
-        </script>
-    </body>
+    </textarea>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <script>
+    var slideshow = remark.create({
+      highlightLines: true
+    });
+  </script>
+</body>
+
 </html>
