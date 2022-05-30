@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript Proxy</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../common/style.css" media="screen" />
+  <style>
+    a {
+      color: #74b1be;
+    }
+
+    .about-me {
+      background-position: center right;
+      background-size: 45%;
+    }
+
+    .big-logo {
+      width: 33%;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 1em;
+    }
+
+    .big-logo img {
+      width: 100%;
+      height: auto;
+    }
+
+    .big-list ul {
+      margin: 0;
+      padding: 0;
+      font-size: 3rem;
+    }
+
+    .big-list li {
+      display: inline;
+      list-style: none;
+      /* padding: 0; */
+      margin: 0;
+    }
+
+    .big-list li:nth-child(odd) {
+      font-weight: bold;
+    }
+
+    .cloud-list ul {
+      margin: 0;
+      padding: 0;
+      font-size: 1.5rem;
+    }
+
+    .cloud-list li {
+      display: inline;
+      list-style: none;
+      /* padding: 0; */
+      margin: 0;
+      color: #ccc;
+    }
+
+    .cloud-list li em {
+      color: #333;
+      font-style: inherit;
+      font-weight: bold;
+    }
+
+    .cloud-list li:nth-child(odd) {
+      font-weight: bold;
+    }
+
+    .focus {
+      background: #2b2e3b;
+      color: #74b1be;
+    }
+
+    .focus a {
+      color: #fff;
+    }
+
+    .warning {
+      background: red;
+      color: white;
+    }
+
+    .success {
+      background: rgb(0, 255, 149);
+      color: rgb(17, 54, 0);
+    }
+
+    .warning a {
+      color: white;
+    }
+
+    .big-title h1 {
+      font-size: 6rem;
+      line-height: 5.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="source">
+
+class: center, middle, focus
+
+# Javascript Proxy
+## Wraps another objectand intercepts operations
+
+[Mozilla MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+
+---
+class: center, middle, warning
+
+
+# DISCLAIMER
+## I'm not an expert
+
+---
+class:  middle
+ 
+# API 
+
+```js
+let myObject = {};
+let myObjectProxy = new Proxy(target, {
+    get() {} // reading a property
+    set() {} //	writing to a property
+    has() {} //	in operator
+    deleteProperty() {} //	delete operator
+    apply() {} //	function call
+    construct() {} //	new operator
+    ownKeys() {} //	Object.getOwnPropertyNames
+                 // Object.getOwnPropertySymbols,
+                 // for..in, Object.keys/values/entries
+  });
+```
+---
+class:  middle
+ 
+# API 
+
+```js
+let myObject = {};
+let myObjectProxy = new Proxy(target, {
+*   get() {} // reading a property
+    set() {} //	writing to a property
+    has() {} //	in operator
+    deleteProperty() {} //	delete operator
+    apply() {} //	function call
+    construct() {} //	new operator
+    ownKeys() {} //	Object.getOwnPropertyNames
+                 // Object.getOwnPropertySymbols,
+                 // for..in, Object.keys/values/entries
+  });
+```
+---
+class:  middle
+ 
+# API
+
+```js
+let myObject = {};
+let myObjectProxy = new Proxy(target, {
+    get() {} // reading a property
+*   set() {} //	writing to a property
+    has() {} //	in operator
+    deleteProperty() {} //	delete operator
+    apply() {} //	function call
+    construct() {} //	new operator
+    ownKeys() {} //	Object.getOwnPropertyNames
+                 // Object.getOwnPropertySymbols,
+                 // for..in, Object.keys/values/entries
+  });
+```
+---
+class:  middle
+ 
+# API 
+
+```js
+let myObject = {};
+let myObjectProxy = new Proxy(target, {
+    get() {} // reading a property
+    set() {} //	writing to a property
+*   has() {} //	in operator
+    deleteProperty() {} //	delete operator
+    apply() {} //	function call
+    construct() {} //	new operator
+    ownKeys() {} //	Object.getOwnPropertyNames
+                 // Object.getOwnPropertySymbols,
+                 // for..in, Object.keys/values/entries
+  });
+```
+---
+class:  middle
+ 
+# API 
+
+```js
+let myObject = {};
+let myObjectProxy = new Proxy(target, {
+    get() {} // reading a property
+    set() {} //	writing to a property
+    has() {} //	in operator
+*   deleteProperty() {} //	delete operator
+    apply() {} //	function call
+    construct() {} //	new operator
+    ownKeys() {} //	Object.getOwnPropertyNames
+                 // Object.getOwnPropertySymbols,
+                 // for..in, Object.keys/values/entries
+  });
+```
+---
+class:  middle
+ 
+# API
+
+```js
+let myObject = {};
+let myObjectProxy = new Proxy(target, {
+    get() {} // reading a property
+    set() {} //	writing to a property
+    has() {} //	in operator
+    deleteProperty() {} //	delete operator
+*   apply() {} //	function call
+    construct() {} //	new operator
+    ownKeys() {} //	Object.getOwnPropertyNames
+                 // Object.getOwnPropertySymbols,
+                 // for..in, Object.keys/values/entries
+  });
+```
+---
+class:  middle
+ 
+# API
+
+```js
+let myObject = {};
+let myObjectProxy = new Proxy(target, {
+    get() {} // reading a property
+    set() {} //	writing to a property
+    has() {} //	in operator
+    deleteProperty() {} //	delete operator
+    apply() {} //	function call
+*   construct() {} //	new operator
+    ownKeys() {} //	Object.getOwnPropertyNames
+                 // Object.getOwnPropertySymbols,
+                 // for..in, Object.keys/values/entries
+  });
+```
+---
+class:  middle
+ 
+# API
+
+```js
+let myObject = {};
+let myObjectProxy = new Proxy(target, {
+    get() {} // reading a property
+    set() {} //	writing to a property
+    has() {} //	in operator
+    deleteProperty() {} //	delete operator
+    apply() {} //	function call
+    construct() {} //	new operator
+*   ownKeys() {} //	Object.getOwnPropertyNames
+*                // Object.getOwnPropertySymbols,
+*                // for..in, Object.keys/values/entries
+  });
+```
+  <!-- - get	reading a property
+    
+    getPrototypeOf() {} //	Object.getPrototypeOf
+    setPrototypeOf() {} //	Object.setPrototypeOf
+- isExtensible	Object.isExtensible
+- preventExtensions	Object.preventExtensions
+- defineProperty	Object.defineProperty, Object.defineProperties
+- getOwnPropertyDescriptor	Object.getOwnPropertyDescriptor, for..in, Object.keys/values/entries
+- ownKeys	Object.getOwnPropertyNames, Object.getOwnPropertySymbols, for..in, Object.keys/values/entries -->
+
+---
+class: center, middle
+
+# Reflect
+##Is a built-in object that provides methods for interceptable JavaScript operations
+
+[Mozilla MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+
+---
+class: center, middle, inverse, big-title
+
+# EXAMPLES
+
+---
+class: middle
+
+# Useful resources
+.biglist[
+- [Mozilla MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+- [Javascript.info](https://javascript.info/proxy)
+]
+
+    </textarea>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <script>
+    var slideshow = remark.create({
+      highlightLines: true,
+      highlightStyle: "googlecode"
+    });
+  </script>
+</body>
+
+</html>
