@@ -4,17 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-
     "livereload": "live-reload --port 35729 ./",
     "open": "opn http://localhost:8000",
-    "start": "ws --rewrite '/talks/* -> /$1' | npm run open | npm run livereload",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ws --rewrite '/talks/* -> /$1'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "opn-cli": "^3.1.0",
-    "ws": "^1.1.1"
+    "local-web-server": "^5.2.1",
+    "node-fetch": "^3.2.4",
+    "opn-cli": "^4.1.0"
   }
 }
